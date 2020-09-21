@@ -1,0 +1,42 @@
+<p>usuariolist works!</p>
+<div class="container">
+    <h2>Lista de usuarios</h2>
+    <p>Operaciones CRUD</p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id usuario</th>
+          <th>Nombre usuario</th>
+          <th>Rol usuario</th>
+          <th>Activo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- {this.state.data.map((dato) => ( -->
+            <tr >
+              <!-- *ngFor="let product of _productlist" -->
+
+              <td></td> 
+              <!-- {usuario.id_Usuario} -->
+              <td></td>
+              <!-- {usuario.nombre} -->
+              <td></td>
+              <!-- {usuario.activo} -->
+              <td></td>
+              <!-- {usuario.id_Rol} -->
+             
+          <td>
+            <button type="button" class="btn btn-primary">Update</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary">Information</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary">Delete</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    &nbsp;&nbsp;
+      <button type="button" class="btn btn-primary" (click)="goToAddUsuario()">Añadir nuevo usuario</button>
+       &nbsp;
+    </div>
+  
