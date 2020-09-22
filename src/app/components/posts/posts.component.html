@@ -1,10 +1,8 @@
-<app-posts></app-posts>
-<!-- <div class="container">
+<div class="container">
     <h2>Lista de usuarios</h2>
     <p>Operaciones CRUD</p>            
     <form action="" id="busquedaForm">
-      <input name="filterPost" placeholder="buscar..." type="text" id="valorBuscar" class="form-control" [(ngModel)]="filterPost">
-
+      <input name="filterPost" placeholder="buscar..." type="text"  class="form-control" [(ngModel)]="filterPost"  >
     </form>
     &nbsp;&nbsp;
     &nbsp;&nbsp;
@@ -20,8 +18,8 @@
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody id="cuerpo">
-                <tr *ngFor="let Usuario of _usuarioList">
+          <tbody>
+                <tr *ngFor="let Usuario of _usuarioList | filter:'nombre':filterPost">
     
                   <td>{{Usuario.id_Usuario}}</td> 
                   <td>{{Usuario.nombre}}</td>
@@ -30,6 +28,7 @@
                  
               <td>
                 <button type="button" class="btn btn-primary" (click)="goToViewUsuario(Usuario.id_Usuario)">Information</button>&nbsp;&nbsp;
+                <!-- (click)="goToViewUsuario(Usuario.id_Usuario)" -->
               </td>
             </tr>
           </tbody>
@@ -39,7 +38,7 @@
     
     &nbsp;&nbsp;
       <button type="button" class="btn btn-primary" (click)="goToAddUsuario()">Añadir nuevo usuario</button>
+      &nbsp;&nbsp;
        &nbsp;&nbsp;
-       &nbsp;&nbsp;
-      
-    </div> -->
+    </div>
+

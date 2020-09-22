@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { NgserviceService } from '../ngservice.service';
 import {Usuario} from '../usuario';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-usuariolist',
@@ -10,9 +11,13 @@ import {Router} from '@angular/router';
 })
 export class UsuariolistComponent implements OnInit {
   constructor(private _service:NgserviceService, private _route:Router) { }
+    filterPost = '';
+    
 
+  //constructor(){}
   _usuarioList : Usuario[];
   ngOnInit(): void {
+
                       this._service.fetchUsuarioListFromRemote().subscribe(
                         data=>{
                                 console.log("Response received");
@@ -45,3 +50,4 @@ export class UsuariolistComponent implements OnInit {
   // }
 
 }
+

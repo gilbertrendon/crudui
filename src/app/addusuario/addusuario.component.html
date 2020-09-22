@@ -4,28 +4,28 @@
         <!-- {{usuario|json}} -->
         <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="nombre">
+            <input value="nombre" type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="nombre">
         </div>
         <div class="form-group">
             <label for="id_usuario">Id usuario</label>
-            <input type="text" class="form-control" required [(ngModel)] = "usuario.id_Usuario"  name="id_Usuario">
+            <input value="44" type="text" class="form-control" required [(ngModel)] = "usuario.id_Usuario"  name="id_Usuario">
         </div>
         <div class="form-group">
             <label for="activo">Activo:</label>
             <select name="activo" id="activo" class="form-control" required [(ngModel)]="usuario.activo">
                 <option value="0">N</option>
-                <option value="1">S</option>
+                <option value="1" selected>S</option>
               </select>
         </div>
          <div class="form-group">
             <label for="id_Rol">Rol:</label>
-            <select name="id_Rol" id="id_Rol" class="form-control" required [(ngModel)]="usuario.id_Rol">
-                <option value="1">ADMINISTRADOR</option>
+            <select name="id_Rol" id="id_Rol" class="form-control" required [(ngModel)]="usuario.id_Rol" >
+                <option value="1" selected>ADMINISTRADOR</option>
                 <option value="2">AUDITOR</option>
                 <option value="3">AUXILIAR</option>
               </select>
         </div>
-        <button type="submit" class="btn btn-success" >Guardar</button>
+        <input type="submit" value="Crear" >
         <!-- <button type="submit" class="btn btn-primary" (click)="goTolist()">Back</button> -->
     </form>
 </div>

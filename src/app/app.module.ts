@@ -9,6 +9,8 @@ import { ViewusuarioComponent } from './viewusuario/viewusuario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddusuarioComponent } from './addusuario/addusuario.component';
 import { FormsModule} from '@angular/forms';
+import { PostsComponent } from './components/posts/posts.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule} from '@angular/forms';
     AddusuarioComponent,
     UsuariolistComponent,
     EditusuarioComponent,
-    ViewusuarioComponent
+    ViewusuarioComponent,
+    PostsComponent,
+    FilterPipe
    
   ],
   imports: [
