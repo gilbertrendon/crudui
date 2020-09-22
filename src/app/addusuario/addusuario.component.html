@@ -1,33 +1,31 @@
-<p>addusuario works!</p>
 <div class="container">
     <h2>Añadir usuario</h2>
-    <form >
-        <!-- #adduserform="ngForm"  -->
-        <!-- (ngSubmit)="adduserformsubmit()" -->
-        <!-- {{user|json}} -->
+    <form #adduserform="ngForm" (ngSubmit)="adduserformsubmit()">
+        <!-- {{usuario|json}} -->
         <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" required name="nombre">
-            <!-- [(ngModel)]="usuario.nombre" -->
+            <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="nombre">
         </div>
         <div class="form-group">
             <label for="id_usuario">Id usuario</label>
-            <input type="text" class="form-control" required name="id_Usuario">
-            <!-- [(ngModel)] = "usuario.id_Usuario" -->
+            <input type="text" class="form-control" required [(ngModel)] = "usuario.id_Usuario"  name="id_Usuario">
         </div>
         <div class="form-group">
             <label for="activo">Activo:</label>
-            <input type="text" class="form-control" required name="activo">
-            <!-- [(ngModel)]="usuario.activo" -->
+            <select name="activo" id="activo" class="form-control" required [(ngModel)]="usuario.activo">
+                <option value="0">N</option>
+                <option value="1">S</option>
+              </select>
         </div>
          <div class="form-group">
-            <label for="id_Rol">Id rol:</label>
-            <input type="text" class="form-control" required name="id_Rol">
-            <!-- [(ngModel)]="usuario.id_Rol" -->
+            <label for="id_Rol">Rol:</label>
+            <select name="id_Rol" id="id_Rol" class="form-control" required [(ngModel)]="usuario.id_Rol">
+                <option value="1">ADMINISTRADOR</option>
+                <option value="2">AUDITOR</option>
+                <option value="3">AUXILIAR</option>
+              </select>
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
-        <button type="submit" class="btn btn-primary" >Back</button>
-        <!-- (click)="gotolist()" -->
-
+        <button type="submit" class="btn btn-success" >Guardar</button>
+        <!-- <button type="submit" class="btn btn-primary" (click)="goTolist()">Back</button> -->
     </form>
 </div>

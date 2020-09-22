@@ -1,1 +1,34 @@
-<p>editusuario works!</p>
+<div class="container">
+    <h2>Editar usuario</h2>
+    <form #adduserform="ngForm" (ngSubmit)="updateuserformsubmit()">
+        <!-- {{usuario|json}} -->
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="nombre">
+        </div>
+        <div class="form-group">
+            <label for="id_usuario">Id usuario</label>
+            <input type="text" class="form-control" required [(ngModel)] = "usuario.id_Usuario"  name="id_Usuario" disabled>
+        </div>
+        <div class="form-group">
+            <label for="activo">Activo:</label>
+            <select name="activo" id="activo" class="form-control" required [(ngModel)]="usuario.activo">
+                <option value="0">No</option>
+                <option value="1">Si</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label for="id_Rol">Rol:</label>
+            <select name="id_Rol" id="id_Rol" class="form-control" required [(ngModel)]="usuario.id_Rol">
+                <option value="1">ADMINISTRADOR</option>
+                <option value="2">AUDITOR</option>
+                <option value="3">AUXILIAR</option>
+              </select>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+        <button type="submit" class="btn btn-primary" (click)="goTolist()">Back</button>
+        <!-- (click)="gotolist()" -->
+
+    </form>
+</div>
+

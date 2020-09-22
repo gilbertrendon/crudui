@@ -11,12 +11,12 @@ import {Router} from '@angular/router';
 export class UsuariolistComponent implements OnInit {
   constructor(private _service:NgserviceService, private _route:Router) { }
 
-  // _usuarioList : Usuario[];
+  _usuarioList : Usuario[];
   ngOnInit(): void {
                       this._service.fetchUsuarioListFromRemote().subscribe(
                         data=>{
                                 console.log("Response received");
-                                //this._productlist=data;
+                                this._usuarioList=data;
                         },
                         error=>console.log("Exception ocurred")
                       )
@@ -28,13 +28,20 @@ export class UsuariolistComponent implements OnInit {
 
   goToEditUsuario (id_Usuario : number){
     console.log("id"+id_Usuario);
-    this._route.navigate(['editusuario']);
+    this._route.navigate(['/editusuario',id_Usuario]);
   }
 
   goToViewUsuario(id_Usuario: number){
     console.log("id"+id_Usuario);
-    this._route.navigate(['viewusuario']);
+    this._route.navigate(['viewusuario',id_Usuario]);
   }
 
+  // onInitt(){
+  //   let cuerpo = document.getElementById("cuerpo");
+  //   while(cuerpo. > 0){
+  //     //cuerpo.;
+  //   }
+  //   //this._usuarioList.forEach(Usuario);
+  // }
 
 }

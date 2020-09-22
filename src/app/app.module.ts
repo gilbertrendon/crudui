@@ -8,6 +8,7 @@ import { EditusuarioComponent } from './editusuario/editusuario.component';
 import { ViewusuarioComponent } from './viewusuario/viewusuario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddusuarioComponent } from './addusuario/addusuario.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddusuarioComponent } from './addusuario/addusuario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

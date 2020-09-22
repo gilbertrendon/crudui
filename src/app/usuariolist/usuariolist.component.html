@@ -2,6 +2,13 @@
 <div class="container">
     <h2>Lista de usuarios</h2>
     <p>Operaciones CRUD</p>            
+    <form action="" id="busquedaForm">
+      <input type="text" id="valorBuscar">
+      <button type="button" class="btn btn-primary">Buscar</button>
+
+    </form>
+    &nbsp;&nbsp;
+    &nbsp;&nbsp;
     <table class="table table-striped">
       <thead>
         <tr>
@@ -12,24 +19,21 @@
           <th>Acciones</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="cuerpo">
         <!-- {this.state.data.map((dato) => ( -->
-            <tr >
+            <tr *ngFor="let Usuario of _usuarioList">
               <!-- *ngFor="let product of _productlist" -->
 
-              <td></td> 
-              <!-- {usuario.id_Usuario} -->
-              <td></td>
-              <!-- {usuario.nombre} -->
-              <td></td>
-              <!-- {usuario.activo} -->
-              <td></td>
-              <!-- {usuario.id_Rol} -->
+              <td>{{Usuario.id_Usuario}}</td> 
+              <td>{{Usuario.nombre}}</td>
+              <td>{{Usuario.id_Rol}}</td>
+              <td>{{Usuario.activo}}</td>
              
           <td>
-            <button type="button" class="btn btn-primary">Update</button>&nbsp;&nbsp;
-            <button type="button" class="btn btn-primary">Information</button>&nbsp;&nbsp;
-            <button type="button" class="btn btn-primary">Delete</button>
+            <!-- <button type="button" class="btn btn-primary">Update</button>&nbsp;&nbsp; -->
+            <button type="button" class="btn btn-primary" (click)="goToViewUsuario(Usuario.id_Usuario)">Information</button>&nbsp;&nbsp;
+            <!-- (click)="goToViewUsuario(".{{Usuario.id_Usuario}}.")" -->
+            <!-- <button type="button" class="btn btn-primary">Delete</button> -->
           </td>
         </tr>
 
@@ -37,6 +41,39 @@
     </table>
     &nbsp;&nbsp;
       <button type="button" class="btn btn-primary" (click)="goToAddUsuario()">Añadir nuevo usuario</button>
-       &nbsp;
+       &nbsp;&nbsp;
+       &nbsp;&nbsp;
+       <!-- <div class="container">
+        <label>Lista de usuarios:</label>
+        <table class="table table-striped">
+         <thead>
+           <tr>
+             <th>Id usuario</th>
+             <th>Nombre usuario</th>
+             <th>Rol usuario</th>
+             <th>Activo</th>
+             <th>Acciones</th>
+           </tr>
+         </thead>
+         <tbody>
+            <label for="Usuario">Seleccione usuario:</label>
+            <input list="_usuarioList" name="_usuarioList" id="_usuarioList">
+               <tr *ngFor="let Usuario of _usuarioList">
+                <datalist id="_usuarioList">
+                  <th><option value='1'>{{Usuario.id_Usuario}}</option></th>
+                  <th><option value='2'>{{Usuario.nombre}}</option></th>
+                  <th><option value='3'>{{Usuario.id_Rol}}</option></th>
+                  <th><option value='4'>{{Usuario.activo}}</option></th>
+                </datalist>
+                
+             <td>
+               <button type="button" class="btn btn-primary">Information</button>&nbsp;&nbsp;
+             </td>
+           </tr>
+         </tbody>
+       </table>
+       </div> FALTA LISTA DESPLEGABLE -->
     </div>
-  
+    <typescript src="script.ts">
+
+    </typescript>
